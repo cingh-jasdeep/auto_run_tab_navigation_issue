@@ -23,7 +23,6 @@ class AppRouter extends RootStackRouter {
         AutoRoute(path: 'tab1detail', page: Tab1DetailRoute.page),
       ],
     ),
-    AutoRoute(path: '/settings', page: SettingsRoute.page),
   ];
 }
 
@@ -48,17 +47,7 @@ class HomeScreen extends StatelessWidget {
       bottomNavigationBuilder: (context, tabsRouter) {
         return NavigationBar(
           selectedIndex: tabsRouter.activeIndex,
-          onDestinationSelected: (index) {
-            switch (index) {
-              case 0:
-              case 1:
-                tabsRouter.setActiveIndex(index);
-              case 2:
-                context.pushRoute(SettingsRoute());
-              default:
-                break;
-            }
-          },
+          onDestinationSelected: tabsRouter.setActiveIndex,
           destinations: [
             NavigationDestination(
               selectedIcon: Icon(Icons.explore),
@@ -69,11 +58,6 @@ class HomeScreen extends StatelessWidget {
               selectedIcon: Icon(Icons.library_books),
               icon: Icon(Icons.library_books_outlined),
               label: "Tab 2",
-            ),
-            NavigationDestination(
-              selectedIcon: Icon(Icons.settings),
-              icon: Icon(Icons.settings_outlined),
-              label: "Settings",
             ),
           ],
         );
@@ -96,6 +80,7 @@ class Tab1Screen extends StatelessWidget {
             Text("tab 1"),
             FilledButton(
               onPressed: () {
+                //here is the issue
                 context.pushRoute(Tab1DetailRoute());
               },
               child: Text("Detail screen"),
@@ -124,15 +109,5 @@ class Tab2Screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(body: Center(child: Text("tab 2")));
-  }
-}
-
-@RoutePage()
-class SettingsScreen extends StatelessWidget {
-  const SettingsScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: Text("Settings")));
   }
 }

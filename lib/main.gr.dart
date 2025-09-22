@@ -29,22 +29,6 @@ class HomeRoute extends _i2.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i1.SettingsScreen]
-class SettingsRoute extends _i2.PageRouteInfo<void> {
-  const SettingsRoute({List<_i2.PageRouteInfo>? children})
-    : super(SettingsRoute.name, initialChildren: children);
-
-  static const String name = 'SettingsRoute';
-
-  static _i2.PageInfo page = _i2.PageInfo(
-    name,
-    builder: (data) {
-      return const _i1.SettingsScreen();
-    },
-  );
-}
-
-/// generated route for
 /// [_i1.Tab1DetailScreen]
 class Tab1DetailRoute extends _i2.PageRouteInfo<void> {
   const Tab1DetailRoute({List<_i2.PageRouteInfo>? children})
