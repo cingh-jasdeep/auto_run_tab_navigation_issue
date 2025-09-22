@@ -1,0 +1,22 @@
+name: auto_run_tab_navigation_issue
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  auto_route: ^10.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  auto_route_generator: ^10.2.3
+  build_runner: ^2.5.4
+
+flutter:
+  uses-material-design: true
